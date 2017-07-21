@@ -1,1 +1,1 @@
-a,b=gets.split.map &:to_i;puts [b<15?:C:%w(NNE NE ENE E ESE SE SSE S SSW SW WSW W WNW NW NNW N)[(a-113)/225],[2,15,33,54,79,107,138,171,207,244,284,326,2e3].index{|x|b-3<x*6}]*" "
+gets=~/ /;puts [?C[c=[2,15,33,54,79,107,138,171,207,244,284,326,2e3].index{|x|$'.to_i-3<x*6}]||%w(NNE NE ENE E ESE SE SSE S SSW SW WSW W WNW NW NNW N)[($`.to_i-113)/225],c]*" "
