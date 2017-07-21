@@ -1,0 +1,1 @@
+a,b=gets.split;puts"%s %d"%[b.to_i<15? ?C:"NNE,NE,ENE,E,ESE,SE,SSE,S,SSW,SW,WSW,W,WNW,NW,NNW,N".split(",")[(a.to_i-113)/225],[*[2,15,33,54,79,107,138,171,207,244,284,326,2e3].each_with_index].bsearch{|x,_|(b.to_i+3)/6<=x}[1]]
