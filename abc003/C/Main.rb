@@ -1,0 +1,1 @@
+n,m=gets.split;r=gets.split.map(&:to_f).sort;p (1..m.to_i).map{|i|r[-i]/2**i}.reduce:+
