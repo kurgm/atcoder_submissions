@@ -1,9 +1,3 @@
-n, k = [int(x) for x in raw_input().split()]
-r = [int(x) for x in raw_input().split()]
-r.sort()
-
-rate = 0.0
-for i in xrange(-k, 0):
-    rate = (rate + r[i]) / 2.0
-
-print rate
+n,k=input().split();s=0
+for x in sorted(map(float,input().split()))[-int(k):]:s=(s+x)/2
+print(s)
