@@ -1,1 +1,1 @@
-puts gets.chars.zip(gets.chars).all?{|x,y|x==y||"@a@t@c@o@d@e@r@"[x+y]}?"You can win":"You will lose"
+a,b=*$<;puts (0..9).all?{|i|a[i]==b[i]||"@a@t@c@o@d@e@r@"[a[i]+b[i]]}?"You can win":"You will lose"
