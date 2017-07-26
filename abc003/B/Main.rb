@@ -1,0 +1,1 @@
+puts gets.chars.zip(gets.chars).all?{|x,y|x==y||"@a@t@c@o@d@e@r@"[x+y]}?"You can win":"You will lose"
