@@ -1,1 +1,1 @@
-r,g,b=gets.split.map &:to_i;p (-400..200).map{|y|s=0;[[-[r-y-100,r/2].max,r],[y,g],[[y+g-100,-~-b/2].max,b]].map{|x,y|(x...x+y).map{|n|s+=n.abs}};s}.min
+r,g,b=gets.split.map &:to_i;p (-400..200).map{|y|s=0;[[-[r-y-100,r/2].max,r],[y,g],[-[100-y-g,b/2].min,b]].map{|x,y|(x...x+y).map{|n|s+=n.abs}};s}.min
