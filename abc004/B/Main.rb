@@ -1,0 +1,1 @@
+puts gets(p).strip.reverse
