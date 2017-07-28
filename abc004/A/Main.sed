@@ -1,0 +1,9 @@
+y/123456789/2468acegi/
+s/[acegi]/A&/g
+y/acegi/02468/
+s/0A/1/g
+s/2A/3/g
+s/4A/5/g
+s/6A/7/g
+s/8A/9/g
+s/A/1/g
