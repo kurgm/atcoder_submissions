@@ -1,0 +1,1 @@
+t=gets.to_i;gets;a=gets.split.map &:to_i;gets;puts gets.split.all?{|y|a[0,(i=a.index{|x|x+t>=(y=y.to_i)&&y>=x})?i+1:0]=[];i}?"yes":"no"
