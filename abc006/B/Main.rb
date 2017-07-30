@@ -1,0 +1,1 @@
+a=b=0;(gets.to_i-c=1).times{a,b,c=b,c,(a+b+c)%10007};p a
