@@ -1,0 +1,1 @@
+m=(q=*1..n=gets.to_i).map{gets.split.map &:to_i};h={};s=(r=*0..n).map{[0].*n+1};q.map{|y|q.map{|x|s[y][x]=s[y-1][x]+s[y][x-1]-s[y-1][x-1]+m[y-1][x-1]}};r.combination(2){|a,b|r.combination(2){|c,d|h[i=(b-a)*(d-c)]=[h[i]||0,s[b][d]-s[a][d]-s[b][c]+s[a][c]].max}};gets;puts$<.map{|x|(1..x.to_i).map{|y|h[y]||0}.max}
