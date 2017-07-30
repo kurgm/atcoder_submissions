@@ -1,0 +1,1 @@
+n,m=gets.split.map &:to_i;puts (n*4<m||m<n*2?[-1]*3:[[0,d=n*3-m].max,n-d.abs,[0,-d].max])*?\s
