@@ -1,1 +1,1 @@
-n=gets.to_i;l=[];a=-1;$<.map{|s|m=s.to_i;l[(0..a).bsearch{|i|l[i]>m}||a+=1]=m};p~a+n
+n,*c=$<.map &:to_i;l=[];a=-1;c.map{|m|l[(0..a).bsearch{|i|l[i]>m}||a+=1]=m};p~a+n
