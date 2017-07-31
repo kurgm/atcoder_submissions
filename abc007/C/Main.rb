@@ -1,0 +1,1 @@
+f=->{gets.split.map{|x|x.to_i-1}};f[];q=[(y,x=f[])];g,h=f[];a=(c=*$<).map{[]};a[y][x]=0;u=[[0,1],[1,0],[0,-1],[-1,0]];q.map{|x,y|u.map{|v,w|c[w+=y][v+=x]==?.&&[c[w][v]=?#,a[w][v]=a[y][x]+1,q<<[v,w]];break if[v,w]==[h,g]}||break};p a[g][h]
