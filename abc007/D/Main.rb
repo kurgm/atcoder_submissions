@@ -1,1 +1,1 @@
-f=->x,r=0{x-=q=x%10;s=q*10**r;q.times{|i|(x+i).to_s=~/[49]/||s-=8**r};x>9?s+f[x/10,r+1]:s};a,b=gets.split;p f[b.to_i+1]-f[a.to_i]
+f=->i{r=(x=i.to_s).size;x.chars{|y|i-=((z=y.to_i)-z/5)*8**r-=1;"49"[y]&&break};i};gets=~/ /;p f[$'.to_i+1]-f[$`.to_i]
