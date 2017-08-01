@@ -1,0 +1,1 @@
+sort|uniq -c|sort -nr|sed -E 's/.+ //;q'
