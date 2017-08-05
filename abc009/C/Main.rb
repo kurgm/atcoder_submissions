@@ -1,1 +1,1 @@
-n,k,s=`ul`.split;m=k.to_i;s=s.chars;puts [*c=s.sort].map{k=m;v=s.shift;c.delete_at c.index{|d|f=m=v[d]?k:k-1;(?a..?z).map{|e|f-=(s.count(e)-c.count(e)+1[e<=>d]).abs};f>~m}}*""
+n,k,s=`ul`.split;m=k.to_i;s=s.chars;puts [*c=s.sort].map{k=m;v,*s=s;c.delete_at c.index{|d|f=m=v[d]?k:k-1;(?a..?z).map{|e|f-=([d,*s].count(e)-c.count(e)).abs};f>~m}}*""
