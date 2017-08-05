@@ -1,0 +1,1 @@
+w,n,*x=$<.map{|l|l.split.map &:to_i};e={};f=->a,b,c,d{a>c||b>d ?0:e[[a,b,c,d]]||=x.map{|i,j|i<a||c<i||j<b||d<j ?0:f[a,b,i-1,j-1]+f[i+1,b,c,j-1]+f[a,j+1,i-1,d]+f[i+1,j+1,c,d]-a-b+c-~d}.max};p f[1,1,*w]
