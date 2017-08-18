@@ -1,0 +1,1 @@
+gets;n=0;gets.split.map{|s|n+=(s.to_i+3)%6%4};p n
