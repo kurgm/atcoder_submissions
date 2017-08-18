@@ -1,0 +1,1 @@
+read E;E=${E,,};echo ${E^}
