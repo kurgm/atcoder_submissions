@@ -1,0 +1,1 @@
+a=2025-gets.to_i;1.upto(9){|i|a%i>0||a/i>9||print(i," x ",a/i,$/)}
