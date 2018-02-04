@@ -1,0 +1,1 @@
+read -d\ ;read X;for ((;X;i+=X%2*a,X/=2));do read -d\  a;done;echo $[i]
