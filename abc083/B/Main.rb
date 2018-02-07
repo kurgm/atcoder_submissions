@@ -1,0 +1,1 @@
+n,a,b=`ul`.split.map(&:to_i);c=0;(1..n).map{|i|s=i.to_s.chars.map(&:to_i).inject(:+);a<=s&&s<=b&&c+=i};p c
