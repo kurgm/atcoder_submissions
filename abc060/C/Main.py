@@ -1,14 +1,11 @@
-n, T = [int(_) for _ in raw_input().split()]
+n, t = [int(x) for x in raw_input().split()]
 s = 0
-S = 0
-x = 0
-for t in [int(_) for _ in raw_input().split()]:
-    e = s + T
-    if e < t:
-        x += e - S
-        S = t
-    s = t
+l = 0
+for ti in [int(x) for x in raw_input().split()] + [float("inf")]:
+  if ti - l < t:
+    s += ti - l
+  else:
+    s += t
+  l = ti
 
-x += t + T - S
-
-print(x)
+print(s)
