@@ -1,0 +1,1 @@
+a;main(c){for(;(c=getchar()-96)>0;)a|=c-3?c!=15&c!=11&c!=21:getchar()!=104;puts(a?"NO":"YES");}
