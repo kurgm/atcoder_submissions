@@ -1,0 +1,1 @@
+read a;echo $a;for ((;a--;));do echo 1;done
