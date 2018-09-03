@@ -1,0 +1,1 @@
+n,h,a,b,c,d,e=`dd`.split.map &:to_i;h-=n*e;b+=e;d+=e;p (0..-h/b+1).map{|x|a*x+c*[0,(-h-b*x)/d+1].max}.min||0
