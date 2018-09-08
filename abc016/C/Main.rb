@@ -1,0 +1,1 @@
+m=[[]]*11;gets=~/ /;$<.map{|l|a,b=l.split.map &:to_i;m[a]|=[b];m[b]|=[a]};1.upto($`.to_i){|n|p (m.values_at(*m[n]).flatten-m[n]-[n]|[]).size}
