@@ -1,0 +1,1 @@
+gets;p gets.split.map{|x|x.to_i.to_s(2)=~/.*1/;$&}.uniq.size
