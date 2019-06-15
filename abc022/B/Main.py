@@ -1,0 +1,1 @@
+n=int(input());print(n-len({int(input())for _ in range(n)}))
