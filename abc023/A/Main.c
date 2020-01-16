@@ -1,0 +1,1 @@
+main(i){gets(&i);printf("%d\n",i%85-11);}
