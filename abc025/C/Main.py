@@ -1,45 +1,59 @@
-b = [[int(x) for x in raw_input().split()] for i in xrange(2)]
-c = [[int(x) for x in raw_input().split()] for i in xrange(3)]
+#!/usr/bin/env python3
 
-def memoize2(score):
-    memo = {}
-    def wrapped(board, ismaru):
-        key = (tuple(board), ismaru)
-        if key in memo:
-            return memo[key]
-        res = score(board, ismaru)
-        memo[key] = res
-        return res
-    return wrapped
+import itertools
 
-def calcScore(board):
-    result = 0
-    for i in xrange(2):
-        for j in xrange(3):
-            if board[3 * i + j] == board[3 * (i + 1) + j]:
-                result += b[i][j]
-            if board[3 * j + i] == board[3 * j + (i + 1)]:
-                result += c[j][i]
-    return result
+b = [[int(x) for x in input().split()] for _ in range(2)]
+c = [[int(x) for x in input().split()] for _ in range(3)]
 
-@memoize2
-def score(board, ismaru):
-    scores = []
-    for idx in xrange(9):
-        if board[idx] is None:
-            newboard = board[:]
-            newboard[idx] = ismaru
-            scores.append(score(newboard, not ismaru))
+scores = {}
 
-    if len(scores) == 0:
-        return calcScore(board)
 
-    if ismaru:
-        return max(scores)
-    return min(scores)
+def init_boards():
+    for os in itertools.combinations(range(9), 5):
+        board = [2] * 9
+        for o in os:
+            board[o] = 1
+        yield tuple(board)
 
-score1 = score([None] * 9, True)
-score2 = sum(sum(x) for x in b) + sum(sum(x) for x in c) - score1
 
-print score1
-print score2
+for board in init_boards():
+    sa = sb = 0
+    for i in range(2):
+        for j in range(3):
+            if board[i * 3 + j] == board[(i+1) * 3 + j]:
+                sa += b[i][j]
+            else:
+                sb += b[i][j]
+    for i in range(3):
+        for j in range(2):
+            if board[i * 3 + j] == board[i * 3 + (j+1)]:
+                sa += c[i][j]
+            else:
+                sb += c[i][j]
+    scores[board] = sa, sb
+
+
+def prev_boards(i, board):
+    for j, bj in enumerate(board):
+        if bj == (i % 2) + 1:
+            yield board[:j] + (0,) + board[j + 1:]
+
+
+for i in reversed(range(9)):
+    n_scores = {}
+    for board, (sa, sb) in scores.items():
+        for pb in prev_boards(i, board):
+            if pb not in n_scores:
+                n_scores[pb] = sa, sb
+            else:
+                sa2, sb2 = n_scores[pb]
+                if sa2 < sa if i % 2 == 0 else sb2 < sb:
+                    n_scores[pb] = sa, sb
+    scores = n_scores
+
+
+assert len(scores) == 1
+
+bsa, bsb = scores[(0,) * 9]
+print(bsa)
+print(bsb)
