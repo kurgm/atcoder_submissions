@@ -20,7 +20,7 @@ jobs:
       run: pip install "git+https://github.com/kurgm/atcoder_git.git@master#egg=atcoder_git"
 
     - name: Run atcoder_git
-      run: atcoder_git ---git-user kurgm gogottt2009-hp@yahoo.co.jp . kurgm
+      run: atcoder_git --git-user kurgm gogottt2009-hp@yahoo.co.jp . kurgm
     
     - name: Push result
       run: |
