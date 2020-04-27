@@ -1,0 +1,28 @@
+name: Update
+
+on:
+  schedule:
+    - cron: "0 20 * * *"
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Setup Python
+      uses: action/setup-python@v1.2.0
+
+    - name: Install atcoder_git
+      run: pip install "git+https://github.com/kurgm/atcoder_git.git@master#egg=atcoder_git"
+
+    - name: Run atcoder_git
+      run: atcoder_git ---git-user kurgm gogottt2009-hp@yahoo.co.jp . kurgm
+    
+    - name: Push result
+      run: |
+        git remote set-url origin "https://kurgm:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+        git push origin master
