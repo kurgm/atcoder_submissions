@@ -29,6 +29,4 @@ jobs:
       run: atcoder_git --git-user kurgm gogottt2009-hp@yahoo.co.jp . kurgm
     
     - name: Push result
-      run: |
-        git remote set-url origin "https://kurgm:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
-        git push origin master
+      run: git push origin master
