@@ -20,7 +20,7 @@ jobs:
         ref: master
 
     - name: Setup Python
-      uses: actions/setup-python@v1.2.0
+      uses: actions/setup-python@v2
 
     - name: Install atcoder_git
       run: pip install "git+https://github.com/kurgm/atcoder_git.git@master#egg=atcoder_git"
