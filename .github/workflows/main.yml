@@ -14,19 +14,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       with:
         fetch-depth: 0
         ref: master
 
     - name: Setup Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
 
     - name: Install atcoder_git
       run: pip install "git+https://github.com/kurgm/atcoder_git.git@master#egg=atcoder_git"
 
     - name: Run atcoder_git
       run: atcoder_git --git-user kurgm gogottt2009-hp@yahoo.co.jp . kurgm
-    
+
     - name: Push result
       run: git push origin master
